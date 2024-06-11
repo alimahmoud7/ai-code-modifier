@@ -1,0 +1,43 @@
+{
+  "name": "ai-modifier",
+  "displayName": "AI Modifier",
+  "description": "AI tool for Python developers. Created by Ali Mahmoud",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "ai-modifier.modifyCode",
+      "title": "Modify Code with AI"
+    }],
+    "menus": {
+      "editor/context": [{
+        "when": "resourceLangId == python",
+        "command": "ai-modifier.modifyCode"
+      }]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
